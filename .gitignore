@@ -1,3 +1,8 @@
+# My stuff
+
+Images/
+App/exosky/static/images/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
