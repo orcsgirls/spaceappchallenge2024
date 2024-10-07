@@ -1,1 +1,67 @@
-<h1>Test</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+	font-family: Verdana, Helvetica, sans-serif;
+	color: red;
+	background-color: black;
+}
+iframe{
+	width: 1300px;
+	height: 800px;
+	border: solid red;
+}
+#exoplanet{
+	background-color: black;
+	color: red;
+}
+#Exoplanet-info{
+	padding-top: 20px;
+}
+</style>
+<script>
+function updateInfo() {
+	var exo = document.getElementById("exoplanet").value;
+	var note = "<h1>Please wait while the view is calculated ..</h1><p>Red color is for stars closer to the exo planet than to earth, <font color='blue'>blue color</font> marks starts further away.</p>"
+	if(exo == ""){
+		document.getElementById("Exoplanet-info").innerHTML = "Please select exoplanet";
+	}
+	else if(exo == "K2-408 b"){
+		document.getElementById("Exoplanet-info").innerHTML = "<h3><strong>Exoplanet Name:</strong> <i>K2-408 b</i></h3> Distance from Earth: 530 light years <br>Orbital period: 21 Earth days <br>Radius: 1.677 x Earth radius <br> Orbiting star: <strong>K2-408</strong> (G-type star)<br>K2-408 b has a potentially rocky surface. It is a Super Earth."+note+"<iframe src='../app?ra=227.916875&dec=-17.68426944&d=162.306'></iframe>";
+	}
+	else if(exo == "Upsilon Andromedae c"){
+		document.getElementById("Exoplanet-info").innerHTML = "<h3><strong>Exoplanet Name:</strong> <i>Upsilon Andromedae c</i></h3> Distance from Earth: 44 light years <br>Orbital period: 241.5 Earth days <br>Radius: 12.32 x Earth radius <br>Orbiting star: <strong>Titawin</strong> (F-type star)<br>Upsilon Andromedae c is a gas giant, similar to the outer planets of our solar system."+note+"<iframe src='../app?ra=24.20904167&dec=41.39060278&d=13.4706'></iframe>";
+	}
+	else if(exo == "Beta Pictoris b"){
+		document.getElementById("Exoplanet-info").innerHTML = "<h3><strong>Exoplanet Name:</strong> <i>Beta Pictoris b</i></h3> Distance from Earth: 64 light years <br>Orbital period: 23.6 Earth years <br>Radius: 18.48 x Earth radius <br>Orbiting star: <strong>Beta Pictoris</strong> (A-type star)<br>Beta Pictoris b is a gas giant, similar to the outer planets of our solar system."+note+"<iframe src='../app?ra=86.82125&dec=-51.0661472&d=19.7442'></iframe>";
+	}
+	else if(exo == "Kepler-1619 b"){
+		document.getElementById("Exoplanet-info").innerHTML = "<h3><strong>Exoplanet Name:</strong> <i>Kepler-1619 b</i></h3> Distance from Earth: 2, 397 light years <br>Orbital period: 23.6 Earth days <br>Radius: 0.76 x Earth radius <br>Orbiting star: <strong>Kepler-1619</strong> (G-type star)<br>Kepler-1619 b is a terrestrial planet with a rocky surface."+note+"<iframe src='../app?ra=285.70358333&dec=44.42215278&d=734.850'></iframe>";
+	}
+	else if(exo == "GJ 887 b"){
+		document.getElementById("Exoplanet-info").innerHTML = "<h3><strong>Exoplanet Name:</strong> <i>GJ 887 b</i></h3> Distance from Earth: 11 light years <br>Orbital period: 9.3 Earth days <br> Radius: 1.88 x Earth radius <br>Orbiting star: <strong>Lacaille 9352</strong> (M-type star)<br>GJ 887 b has a potentially rocky surface. It is a Super Earth."+note+"<iframe src='../app?ra=346.46683333&dec=-35.8530555&d=3.29'></iframe>";
+	}
+	else if(exo == "Epsilon Coronae Borealis b"){
+		document.getElementById("Exoplanet-info").innerHTML = "<h3><strong>Exoplanet Name:</strong> <i>Epsilon Coronae Borealis b</i></h3> Distance from Earth: 228 light years <br>Orbital period: 417.9 Earth days <br> Radius: 12.656 x Earth radius <br>Orbiting star: <strong>Epsilon Coronae Borealis</strong> (K-type star)<br>Epsilon Coronae Borealis b is a gas giant, similar to the outer planets of our solar system."+note+"<iframe src='../app?ra=239.3965&dec=26.87761667&d=69.8683'></iframe>";
+	}
+}
+</script>
+</head>
+
+<body>
+<h1>ExoSkies Star Viewer</h1>
+Select Exoplanet: <br> <select name="exoplanets" id="exoplanet" onchange="updateInfo()">
+	<option value="" selected="selected">Select exoplanet</option>
+	<option value="K2-408 b">K2-408 b</option>
+	<option value="Upsilon Andromedae c">Upsilon Andromedae c</option>
+	<option value="Beta Pictoris b">Beta Pictoris b</option>
+	<option value="Kepler-1619 b">Kepler-1619 b</option>
+	<option value="GJ 887 b">GJ 887 b</option>
+	<option value="Epsilon Coronae Borealis b">Epsilon Cornoae Borealis b</option>
+  </select>
+<div id="Exoplanet-info">
+Please select exoplanet
+</div>
+</body>
+</html>
